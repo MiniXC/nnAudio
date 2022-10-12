@@ -19,7 +19,8 @@ class Gammatonegram(nn.Module):
         The window size for the STFT. Default value is 2048
     n_mels : int
         The number of Gammatonegram filter banks. The filter banks maps the n_fft to Gammatone bins. Default value is 64
-
+    win_length : int
+        The window size. Default value is 2048.
     hop_length : int
         The hop (or stride) size. Default value is 512.
     window : str
@@ -60,6 +61,7 @@ class Gammatonegram(nn.Module):
         sr=44100,
         n_fft=2048,
         n_bins=64,
+        win_length=2048,
         hop_length=512,
         window="hann",
         center=True,
@@ -83,7 +85,7 @@ class Gammatonegram(nn.Module):
         # Create filter windows for stft
         start = time()
         wsin, wcos, self.bins2freq, _, _ = create_fourier_kernels(
-            n_fft, freq_bins=None, window=window, freq_scale="no", sr=sr
+            n_fft, freq_bins=None, window=window, freq_scale="no", sr=sr, win_length=win_length,
         )
 
         wsin = torch.tensor(wsin, dtype=torch.float)
