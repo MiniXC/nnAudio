@@ -4,7 +4,7 @@ nnAudio is an audio processing toolbox using PyTorch convolutional neural networ
 Other GPU audio processing tools are [torchaudio](https://github.com/pytorch/audio) and [tf.signal](https://www.tensorflow.org/api_docs/python/tf/signal). But they are not using the neural network approach, and hence the Fourier basis can not be trained. As of PyTorch 1.6.0, torchaudio is still very difficult to install under the Windows environment due to `sox`. nnAudio is a more compatible audio processing tool across different operating systems since it relies mostly on PyTorch convolutional neural network. The name of nnAudio comes from `torch.nn`
 
 ## Installation
-`pip install git+https://github.com/KinWaiCheuk/nnAudio.git#subdirectory=Installation`
+`pip install git+https://github.com/MiniXC/nnAudio.git#subdirectory=Installation`
 
 or
 
